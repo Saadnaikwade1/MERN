@@ -24,5 +24,5 @@ app.get("/search/:email",(req,res)=>{
 
 })
 app.listen(PORT,()=>{
-    console.log(`Server started successfully on http://localhost:${PORT}🚀`);
+    console.log(`Server started successfully on http://localhost:${PORT} 🚀`);
 })

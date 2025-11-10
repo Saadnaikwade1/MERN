@@ -1,0 +1,17 @@
+{
+  "name": "03resultapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Saad N",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoos": "^0.0.1-security",
+    "mongoose": "^8.19.3",
+    "nodemon": "^3.1.10"
+  }
+}
