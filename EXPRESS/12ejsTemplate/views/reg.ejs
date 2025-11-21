@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejs Template </title>
+</head>
+<body>
+    <%- include("nav")%>
+
+    <form action="/add" method="post">
+        <input type="text" name="name" placeholder="Enter name">
+        <input type="email" name="email" placeholder="Enter email">
+        <div>
+            <input type="radio" name="gen" value="male">Male
+            <input type="radio" name="gen" value="female">Female
+        </div>
+        <input type="submit" placeholder="Register">
+    </form>
+</body>
+</html>
