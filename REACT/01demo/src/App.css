@@ -1,0 +1,35 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.con{
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color:black;
+
+}
+div h1{
+  color: white;
+  text-transform: capitalize;
+}
+p{
+  color: white;
+  text-transform: lowercase
+}
+.con-child{
+  color: white;
+}
+.con-child span{
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  color: red;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
