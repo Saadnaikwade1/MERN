@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result portal</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+  </head>
+  <body>
+
+    <form action="/upd" method="post">
+      
+        <input type="text" name="_id" readonly value= <%= data._id %> ><br>
+        <input type="text" name="name" placeholder="Enter Name" value=<%= data.name %> ><br>
+        <input type="text" name="age" placeholder="Enter age" value=<%= data.age %> ><br>
+
+        <div>
+            <%if (data.gender=='male') {%>
+            <input type="radio" name="gender" value="male" checked >Male
+            <input type="radio" name="gender" value="female">Female 
+            <%} else {%>
+                 <input type="radio" name="gender" value="male"  >Male
+            <input type="radio" name="gender" value="female"checked >Female 
+            <% } %>
+        </div>
+        <input type="tel" name="phno" placeholder="Enter phno" value= <%= data.phno %> ><br>
+        <input type="text" name="marks" placeholder="Enter marks" value= <%= data.marks %> ><br>
+        <input type="submit" placeholder="Register"><br> 
+    </form>
+  </body>
+</html>

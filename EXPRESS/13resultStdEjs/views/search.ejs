@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%-include("nav")%>
+    <%if(msg!=''){%>
+
+    <div style="color: red"><%= msg%></div>
+    <%}%>
+    <form action="/search">
+      <input type="text" placeholder="Enter Hno" name="_id" />
+      <input type="submit" value="search" />
+    </form>
+      <%
+    if(data)
+    {%>
+        <table border="1">
+            <tr><th>Hno</th><td> <%=data._id %></td></tr>
+            <tr><th>Name</th><td> <%=data.name %></td></tr>
+            <tr><th>Marks</th><td> <%=data.marks %></td></tr>
+        </table>
+
+    <%}
+    %>
+  </body>
+</html>

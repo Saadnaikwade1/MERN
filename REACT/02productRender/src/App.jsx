@@ -211,6 +211,7 @@ function App(){
     <div className="con">
       { 
         arr.map((obj)=>{
+          
           return(
             <div className="card">
               <img src={obj.image} />

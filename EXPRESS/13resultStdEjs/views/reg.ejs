@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result portal</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+
+        }
+    </style>
+  </head>
+  <body>
+        <%-include("nav") %>
+
+    <%if(msg){%>
+      <p><%= msg%></p>
+      <%}%>
+    <form action="/add" method="post">
+       
+        <input type="text" name="_id" placeholder="Enter Student ID" required><br>
+        <input type="text" name="name" placeholder="Enter Name" required><br>
+        <input type="text" name="age" placeholder="Enter age" required><br>
+        <div>
+            <input type="radio" name="gender" value="male" >Male
+            <input type="radio" name="gender" value="female">Female 
+
+        </div>
+        <input type="tel" name="phno" placeholder="Enter phno" required><br>
+        <input type="text" name="marks" placeholder="Enter marks" required><br>
+        <input type="submit" placeholder="Register"><br>
+    </form>
+  </body>
+</html>

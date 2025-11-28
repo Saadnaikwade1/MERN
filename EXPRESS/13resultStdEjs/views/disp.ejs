@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL user data</title>
+</head>
+<body>
+        <%-include("nav") %>
+        <%if(data.length>0) { %>
+            <table border="1">
+                <tr><th><a href="/sort/_id">Hno</a></th><th><a href="/sort/name">Name</a></th><th><a href="/sort/age">Age</a></th><th><a href="/sort/gender">Gender</a></th><th>Phno</th><th><a href="/sort/marks">Marks</a></th></tr>
+                <%data.forEach((obj)=>{%>
+                    <tr>
+                        <td><%= obj._id %></td>
+                        <td><%= obj.name %></td>
+                        <td><%= obj.age %></td>
+                        <td><%= obj.gender %></td>
+                        <td><%= obj.phno %></td>
+                        <td><%= obj.marks %></td>
+                        <td><button><a href=<%= `/edit/${obj._id}` %> >Edit</a></button></td>
+                        <td><button><a href= <%= `/del/${obj._id}` %> >Delete</a></button></td>
+                    </tr>
+                    <% }) %> 
+            </table>
+        <%}else{%>
+           
+            <img style="width: 50%; position:absolute; top:0%; left: 25%;" src="https://assets-v2.lottiefiles.com/a/d0e676f0-1171-11ee-bc70-a32ccea88159/futyVsSx0M.gif" alt="">
+        <%}%>
+</body>
+</html>
