@@ -1,9 +1,10 @@
 let express=require('express');
 let mongoose=require('mongoose');
 const rt = require('./routes/resRoute');
+require("dotenv").config();
 
 mongoose
-  .connect("mongodb://localhost:27017/resultPortal")
+  mongoose.connect(process.env.MONGO_URL)
   .then(() => {
     console.log("Database connection done successfully 🚀");
   })
@@ -17,4 +18,4 @@ app.use(express.urlencoded({"extended":true}))
 app.set("view engine","ejs")
 app.use("/",rt)
 
-app.listen(5000)
+app.listen(process.env.PORT || 5000)
