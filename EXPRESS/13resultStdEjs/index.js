@@ -18,4 +18,4 @@ app.use(express.urlencoded({"extended":true}))
 app.set("view engine","ejs")
 app.use("/",rt)
 
-app.listen(process.env.PORT || 5000)
+app.listen(process.env.PORT || 8000)

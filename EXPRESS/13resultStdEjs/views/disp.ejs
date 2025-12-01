@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALL user data</title>
-</head>
+<%- include("head") %>
 <body>
         <%-include("nav") %>
         <%if(data.length>0) { %>
@@ -25,7 +21,7 @@
             </table>
         <%}else{%>
            
-            <img style="width: 50%; position:absolute; top:0%; left: 25%;" src="https://assets-v2.lottiefiles.com/a/d0e676f0-1171-11ee-bc70-a32ccea88159/futyVsSx0M.gif" alt="">
+            <img id="notfound" style="width: 50%; position:absolute; top:0%; left: 25%;" src="https://assets-v2.lottiefiles.com/a/d0e676f0-1171-11ee-bc70-a32ccea88159/futyVsSx0M.gif" alt="">
         <%}%>
 </body>
 </html>

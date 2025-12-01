@@ -1,0 +1,136 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    nav {
+      box-sizing: border-box;
+      width: 50%;
+      height: 10vh;
+      display: flex;
+      margin-top: 30px;
+      padding-top: 40px;
+      justify-content: center;
+      border-radius: 10px;
+      align-content: center;
+      gap: 50px;
+      background-color: #333;
+    }
+    nav a {
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+    }
+    .msg-box {
+      background: #fff;
+      padding: 25px 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      max-width: 450px;
+    }
+
+    .msg-box h1 {
+      font-size: 22px;
+      color: red;
+      margin: 0;
+      word-wrap: break-word;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 40px;
+      padding: 25px;
+      background: #ffffff;
+      width: 80%;
+      max-width: 650px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .portal-img {
+      width: 60%;
+      border-radius: 50%;
+      border: 2px solid #ff9800;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .portal-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+    #notfound {
+      margin-top: 200px;
+      width: 50%;
+      height: 50%;
+      border-radius: 20px;
+      /* border:2px solid black; */
+      box-shadow: 8px 8px 3px rgb(67, 63, 63);
+    }
+    .search {
+      margin: 30px;
+      width: 50%;
+      height: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      gap: 10px;
+    }
+
+    .search input:first-child {
+      width: 60%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #aaa;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    .search input:last-child {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .search input:last-child:hover {
+      background-color: #0056b3;
+    }
+    .search-errmsg {
+      margin-top: 30px;
+      color: red;
+    
+      font-size: 18px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .portal-img {
+        width: 80%;
+      }
+    }
+  </style>
+</head>

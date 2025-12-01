@@ -10,12 +10,13 @@ let add = async (req, res) => {
   try {
     let data = new rm(req.body);
     await data.save();
+    console.log(data)
     res.render("reg", { msg: "Data stored successfully!" });
   } catch (error) {
     console.log(error.message);
-
+ 
     res.render("error", { msg: "Error in storing data" });
-  }
+  } 
 };
 let disp = async (req, res) => {
   try {

@@ -6,7 +6,7 @@ let resultScheema=mongoose.Schema({
     "gender":String,
     "phno":Number,
     "marks":Number,
-
+ 
 })
 
 let rm=mongoose.model('result',resultScheema)
