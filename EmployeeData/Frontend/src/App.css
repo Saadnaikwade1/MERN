@@ -1,0 +1,139 @@
+
+.form {
+  width: 380px;
+  margin: 50px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.form h1 {
+  text-align: center;
+  color: #2d7dff;
+  font-size: 20px;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"],
+.form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.form input:focus,
+.form select:focus {
+  border-color: #2d7dff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(45, 125, 255, 0.4);
+}
+
+.form div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form button {
+  padding: 12px;
+  background: #2d7dff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background: #1b57c9;
+}
+
+.form select {
+  background: #fff;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+  background: #2d7dff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.nav a:hover {
+  background: #1a5ed4;
+}
+table {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  font-family: "Segoe UI", sans-serif;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+th {
+  background: #2d7dff;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  text-align: left;
+}
+
+td {
+  padding: 12px;
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background: #f3f5ff;
+}
+
+button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  color: white;
+}
+
+button:nth-child(1) {
+  background: #1a73e8;
+}
+
+button:nth-child(1):hover {
+  background: #0f57b3;
+}
+
+button:nth-child(2) {
+  background: #e63946;
+}
+
+button:nth-child(2):hover {
+  background: #c82333;
+}
