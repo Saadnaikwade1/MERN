@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-let taskScheema = mongoose.Schema({
+let empScheema = mongoose.Schema({
   _id: String,
   name: String,
   pwd: String,
@@ -11,5 +11,5 @@ let taskScheema = mongoose.Schema({
   otp: String,
 });
 
-let task = mongoose.model("task", taskScheema);
-module.exports = task;
+let emp = mongoose.model("emp", empScheema);
+module.exports = emp;

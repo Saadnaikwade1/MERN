@@ -1,5 +1,5 @@
 const express = require('express');
-const {add,login, sendOtp, validateOtp, updatePassword} = require('../controllers/taskCon');
+const {add,login, sendOtp, validateOtp, updatePassword} = require('../controllers/empCon');
 
 
 let rt=new express.Router()

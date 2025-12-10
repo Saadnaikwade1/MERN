@@ -1,9 +1,10 @@
 const express = require('express'); 
 const mongoose = require('mongoose');
-const rt = require('./routes/taskRoute');
+const rt = require('./routes/empRoute');
 const cors=require('cors');
+require('dotenv').config();
 
-mongoose.connect("mongodb+srv://saad:saad123@cluster0.tbofwtl.mongodb.net/?appName=Cluster0")
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
     console.log('data ok');
 }).catch((err)=>{
