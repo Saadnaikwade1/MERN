@@ -34,6 +34,7 @@ let login = async (req, res) => {
       token: jwt.sign({ _id: obj._id }, "abcd"),
       role: obj.role,
       name: obj.name,
+      _id: obj._id,
     });
   } catch {
     res.json({ msg: "Error in login ⚠️" });
@@ -150,13 +151,13 @@ let validateOtp = async (req, res) => {
   try {
     let obj = await emp.findById(req.params.id);
     if (obj?.otp == req.params.otp) {
-      await task.findByIdAndUpdate({ _id: obj._id }, { $unset: { otp: "" } });
+      await emp.findByIdAndUpdate({ _id: obj._id }, { $unset: { otp: "" } });
       res.json({ msg: "OTP Verified" });
     } else {
       res.json({ msg: "Provide valid OTP" });
     }
   } catch (err) {
-    console.log(err.message);
+    console.log(err);
 
     res.json({ msg: "Error verifying OTP" });
   }
@@ -171,4 +172,13 @@ let updatePassword = async (req, res) => {
     res.json({ msg: "Error in reseting password" });
   }
 };
-module.exports = { add, login, sendOtp, validateOtp, updatePassword };
+
+let getemp = async (req, res) => {
+  try {
+    let data = await emp.find({ dept: req.params.dept }, { name: 1 });
+    res.json(data);
+  } catch {
+    res.json({ msg: "Error in Fetching Employees" });
+  }
+};
+module.exports = { add, login, sendOtp, validateOtp, updatePassword, getemp };

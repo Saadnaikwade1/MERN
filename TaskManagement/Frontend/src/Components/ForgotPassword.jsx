@@ -23,6 +23,7 @@ function ForgotPassword() {
     let validateOtp=()=>{
       console.log(data);
       axios.get(`http://localhost:5000/votp/${data._id}/${data.otp}`).then((res)=>{
+      console.log(res.data)
         if(res.data.msg=="OTP Verified"){
           setF(2)
           setMsg("")

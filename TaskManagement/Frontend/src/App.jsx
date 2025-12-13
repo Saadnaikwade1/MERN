@@ -12,7 +12,7 @@ import UserContext from './Components/UserContext'
 import ForgotPassword from './Components/ForgotPassword'
 
 function App() {
-    let [state,setState]=useState({"token":"","name":"","role":""})
+    let [state,setState]=useState({"token":"","name":"","role":"","_id":""})
     let stateUpd=(sobj)=>{
         setState({...state,...sobj})
     }
