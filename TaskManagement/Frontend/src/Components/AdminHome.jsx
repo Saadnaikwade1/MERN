@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import Ct from "./UserContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Base_API from "../config/api";
 
 function AdminHome() {
   let [data, setData] = useState([]);
@@ -15,14 +16,14 @@ function AdminHome() {
     if (obj.state.token === "") {
       navigate("/");
     } else {
-      axios.get("http://localhost:5000/disp").then((res) => {
+      axios.get(`${Base_API}/disp`).then((res) => {
         setData(res.data);
       });
     }
   }, [f]);
 
   let del = (tid) => {
-    axios.delete(`http://localhost:5000/del/${tid}`).then((res) => {
+    axios.delete(`${Base_API}/del/${tid}`).then((res) => {
       setMsg(res.data.msg);
       setF(!f);
 

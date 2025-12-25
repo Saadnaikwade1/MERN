@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Base_API from "../config/api";
 
 function Register() {
   let [data, setData] = useState({
@@ -14,7 +15,7 @@ function Register() {
     setData({ ...data, [name]: value });
   };
   let reg = () => {
-    axios.post("http://localhost:5000/add", data).then((res) => {
+    axios.post(`${Base_API}/add`, data).then((res) => {
       setMsg(res.data.msg);
       if (res.data.msg == "Account created") {
         setData({

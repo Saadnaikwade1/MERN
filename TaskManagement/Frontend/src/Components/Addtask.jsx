@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import Ct from "./UserContext"
 import { useState } from 'react'
 import axios from 'axios'
+import Base_API from '../config/api'
+
 function Addtask() {
     let obj=useContext(Ct)
   let navigate=useNavigate()
@@ -26,7 +28,7 @@ function Addtask() {
     setData({...data,[name]:value})
   }
   let addtask=()=>{
-    axios.post(`http://localhost:5000/addtask`,data).then((res)=>{
+    axios.post(`${Base_API}/addtask`,data).then((res)=>{
       setMsg(res.data.msg)
       setData({"title":"","desc":"","dept":"","eid":""})
 
@@ -35,7 +37,7 @@ function Addtask() {
   }
   let getemp=(e)=>{
     setData({...data,"dept":e.target.value,"eid":""})
-    axios.post(`http://localhost:5000/getemp/${e.target.value}`).then((res)=>{
+    axios.post(`${Base_API}/${e.target.value}`).then((res)=>{
       setEmp(res.data)
     })
 

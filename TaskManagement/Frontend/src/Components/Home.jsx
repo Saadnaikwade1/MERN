@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import UserContext from "./UserContext"
 import axios from "axios"
+import Base_API from "../config/api"
 
 function Home() {
   const obj = useContext(UserContext)
@@ -17,7 +18,7 @@ function Home() {
       navigate("/")
     } else {
       axios
-        .get(`http://localhost:5000/disp/${obj.state._id}`)
+        .get(`${Base_API}/disp/${obj.state._id}`)
         .then((res) => {
           if (res.data.length > 0) {
             setcrTask(res.data.filter((o) => o.status === "created"))
@@ -30,7 +31,7 @@ function Home() {
 
   const changeState = (tid, st) => {
     axios
-      .get(`http://localhost:5000/updstatus/${tid}/${st}`)
+      .get(`${Base_API}/updstatus/${tid}/${st}`)
       .then(() => setF(!f))
   }
 

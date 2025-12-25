@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom';
+import Base_API from '../config/api';
 
 function ForgotPassword() {
      let [f,setF]=useState(0)
@@ -12,7 +13,7 @@ function ForgotPassword() {
     }
 
     let sendOtp=()=>{
-      axios.get(`http://localhost:5000/sendopt/${data._id}`).then((res)=>{
+      axios.get(`${Base_API}/sendopt/${data._id}`).then((res)=>{
         setMsg(res.data.msg)
         if (res.data.msg=="OTP sent"){
 
@@ -22,7 +23,7 @@ function ForgotPassword() {
     }
     let validateOtp=()=>{
       console.log(data);
-      axios.get(`http://localhost:5000/votp/${data._id}/${data.otp}`).then((res)=>{
+      axios.get(`${Base_API}/votp/${data._id}/${data.otp}`).then((res)=>{
       console.log(res.data)
         if(res.data.msg=="OTP Verified"){
           setF(2)
@@ -33,7 +34,7 @@ function ForgotPassword() {
       })
     }
     let updPass=()=>{
-      axios.put(`http://localhost:5000/updpass/`,data).then((res)=>{
+      axios.put(`${Base_API}/updpass/`,data).then((res)=>{
         if(res.data.msg=="Password Updated succesfully.")
         {
           navigate("/")

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import UserContext from "./UserContext";
 import { Link } from "react-router-dom";
+import Base_API from "../config/api";
 
 function Login() {
   let [data, setData] = useState({
@@ -17,7 +18,8 @@ function Login() {
     setData({ ...data, [name]: value });
   };
   let login = () => {
-    axios.post("http://localhost:5000/login", data).then((res) => {
+    // console.log("BASE API:", Base_API);
+    axios.post(`${Base_API}/login`, data).then((res) => {
       if (res.data.token != undefined) {
         obj.stateUpd(res.data);
         if (res.data.role == "emp") {
