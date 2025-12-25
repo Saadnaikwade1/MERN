@@ -16,7 +16,11 @@ mongoose
 
 let app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://employee-management-frontend-2fmu.onrender.com",
+  credentials: true
+}));
+
 app.use("/", rt);
 
 app.listen(PORT, () => {
