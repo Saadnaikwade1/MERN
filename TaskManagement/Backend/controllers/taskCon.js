@@ -35,4 +35,13 @@ let updateStatus=async(req,res)=>{
         res.json({"msg":"Error in updating task"})
     }
 }
-module.exports={addTask,adminDisplay,empDisplay,updateStatus}
+
+let del=async(req,res)=>{
+    try{
+        await tm.findByIdAndDelete(req.params.tid)
+        res.json({"msg":"Task deleted"})
+    }catch{
+        res.json({msg:"Error in deleting data"})
+    }
+}
+module.exports={addTask,adminDisplay,empDisplay,updateStatus,del}

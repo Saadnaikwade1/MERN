@@ -11,5 +11,5 @@ let empScheema = mongoose.Schema({
   otp: String,
 });
 
-let emp = mongoose.model("emp", empScheema);
+let emp = mongoose.model("emptask", empScheema);
 module.exports = emp;

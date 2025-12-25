@@ -1,6 +1,6 @@
 const express = require('express');
 const {add,login, sendOtp, validateOtp, updatePassword,getemp} = require('../controllers/empCon');
-const {addTask,empDisplay,adminDisplay, updateStatus} = require('../controllers/taskCon');
+const {addTask,empDisplay,adminDisplay, updateStatus,del} = require('../controllers/taskCon');
 
 
 let rt=new express.Router()
@@ -14,4 +14,5 @@ rt.get("/disp/:eid",empDisplay)
 rt.get("/disp",adminDisplay)
 rt.post("/getemp/:dept",getemp)
 rt.get("/updstatus/:tid/:st",updateStatus)
+rt.delete("/del/:tid",del)
 module.exports=rt   
