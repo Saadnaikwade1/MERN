@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API_BASE_URL from "../config/api";
 
 function DisplayData() {
   let [data, setData] = useState([]);
   let nav=useNavigate()
 
   useEffect(() => {
-    axios.get("http://localhost:5000/disp").then((res) => {
+    axios.get(`${API_BASE_URL}/disp`).then((res) => {
       setData(res.data);
     });
   }, []);
@@ -17,7 +18,7 @@ function DisplayData() {
  let del = (id) => {
   if (window.confirm(`Do you want to delete employee with ID: ${id}?`)) {
     axios
-      .delete(`http://localhost:5000/emp/${id}`)
+      .delete(`${API_BASE_URL}/emp/${id}`)
       .then((res) => {
         alert(`Employee with ID ${id} deleted successfully`);
         window.location.reload(); // or update state

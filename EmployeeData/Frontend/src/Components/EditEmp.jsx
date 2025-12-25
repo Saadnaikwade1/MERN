@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import API_BASE_URL from "../config/api";
 
 function EditEmp() {
   let [data, setData] = useState({});
@@ -15,14 +16,14 @@ function EditEmp() {
 
   // Fetch employee data
   useEffect(() => {
-    axios.get(`http://localhost:5000/edit/${id}`).then((res) => {
+    axios.get(`${API_BASE_URL}/edit/${id}`).then((res) => {
       setData(res.data);
     });
   }, []);
 
   // Update employee
   let upd = () => {
-    axios.put(`http://localhost:5000/upd/${id}`, data).then((res) => {
+    axios.put(`${API_BASE_URL}/upd/${id}`, data).then((res) => {
       alert("Data Updated");
       nav("/");
     });
