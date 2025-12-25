@@ -29,8 +29,7 @@ function App() {
             <Route path='/addtask' element={<Addtask/>}/>
             <Route path='/logout' element={<Logout/>}/>
             <Route path='/fpwd' element={<ForgotPassword/>}/>
-             {/* Redirect unknown routes to home */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+          
         
         </Routes>
         </UserContext.Provider>
