@@ -8,7 +8,7 @@ function WheatherApi() {
   let fun = () => {
     axios
       .get(
-        `http://api.weatherapi.com/v1/current.json?key=21950584c361496db0f65725250408&q=${place}&aqi=no`
+        `https://api.weatherapi.com/v1/current.json?key=21950584c361496db0f65725250408&q=${place}&aqi=no`
       )
       .then((res) => {
         setData(res.data);
