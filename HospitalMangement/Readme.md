@@ -1,92 +1,68 @@
-🏥 Hospital Management System (MERN)
+#### 🏥 Hospital Management System (MERN)
 
 A full-stack Hospital Management System built using React (Frontend) and Node.js + Express + MongoDB (Backend) with role-based access for Admin, Doctor, Patient, and Operator (Receptionist).
 
-This application supports:
+###### click here to live demo
+- [🚀Hospital_Management](https://hospital-management-le15.onrender.com/)
 
-✔ Patient Management
-✔ Doctor Management
-✔ Appointment Booking
-✔ Operator (Receptionist) Panel
-✔ Role-Based Access Control
+---
 
-🛠️ Tech Stack
-<p align="left"> <img src="https://img.shields.io/badge/Frontend-ReactJS-61DBFB?style=for-the-badge&logo=react&logoColor=black"/> <img src="https://img.shields.io/badge/Backend-NodeJS-3C873A?style=for-the-badge&logo=node.js&logoColor=white"/> <img src="https://img.shields.io/badge/API-ExpressJS-000000?style=for-the-badge&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/Database-MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/Auth-JWT-orange?style=for-the-badge&logo=jsonwebtokens"/> <img src="https://img.shields.io/badge/HTTP-Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/> <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge"/> </p>
-📸 Project Preview
+#### This application supports:
 
-👥 User Roles
-🧑‍⚕️ Admin
+-  Patient Management
+- Doctor Management
+- Appointment Booking
+- Operator (Receptionist) Panel
+- Role-Based Access Control
+---
 
-Manage doctors
+#### 🛠️ Tech Stack
+<p align="center"> 
+<img src="https://img.shields.io/badge/Frontend-ReactJS-61DBFB?style=for-the-badge&logo=react&logoColor=black"/> 
+<img src="https://img.shields.io/badge/Backend-NodeJS-3C873A?style=for-the-badge&logo=node.js&logoColor=white"/> <img src="https://img.shields.io/badge/API-ExpressJS-000000?style=for-the-badge&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/Database-MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/Auth-JWT-orange?style=for-the-badge&logo=jsonwebtokens"/> <img src="https://img.shields.io/badge/HTTP-Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/> <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge"/> </p>
 
-Manage patients
+---
 
-View all appointments
+### 👥 User Roles
+- admin
+- Patient
+- Docter
+- Receptionist
 
-Full system control
+#### 🚀 Features
+###### ✅ Patient Management
+- Register and search patients
+- Case-insensitive search (name/email)
+- View appointment history
 
-👨‍⚕️ Doctor
+###### ✅ Doctor Management
 
-View assigned appointments
+- Doctor profile with specialization
 
-Update appointment status
+- Available working days
 
-Check patient details
+- Consultation fee display
 
-🧑 Patient
+###### ✅ Appointment Booking
 
-Book appointments
+- Book by patient or operator
 
-View appointment history
+- Doctor availability validation
 
-Select doctor & time slot
+- Fixed time slots
 
-🧾 Operator (Receptionist)
+- Status tracking
 
-Search patients by name/email
+###### ✅ Operator Panel
 
-Book appointments for patients
+- Front-desk booking
 
-View patient appointment history
+- Patient search & verification
 
-Check doctor availability
+- Appointment history view
 
-🚀 Features
-✅ Patient Management
-
-Register and search patients
-
-Case-insensitive search (name/email)
-
-View appointment history
-
-✅ Doctor Management
-
-Doctor profile with specialization
-
-Available working days
-
-Consultation fee display
-
-✅ Appointment Booking
-
-Book by patient or operator
-
-Doctor availability validation
-
-Fixed time slots
-
-Status tracking
-
-✅ Operator Panel
-
-Front-desk booking
-
-Patient search & verification
-
-Appointment history view
-
-🔗 API Endpoints
+###### 🔗 API Endpoints
+```
 Method	Endpoint	Description
 POST	/auth/login	Login user
 GET	/patients	Get all patients
@@ -94,6 +70,9 @@ GET	/patients/search	Search patient
 GET	/doctors	Get doctors
 POST	/appointments/book	Book appointment
 GET	/appointments/patient/:id	Patient history
+```
+
+```bash
 📂 Project Structure
 Hospital-Management-System/
 │
@@ -109,20 +88,26 @@ Hospital-Management-System/
 │   ├── routes/
 │   ├── models/
 │   └── middleware/
+```
 
-🔐 Security
 
-JWT Authentication
+--- 
 
-Role-Based Route Protection
+#### 🔐 Security
 
-Secure API access
+- JWT Authentication
 
-Input validation
+- Role-Based Route Protection
+
+- Secure API access
+
+- Input validation
+
+```bash
 
 📦 Installation & Setup
 1️⃣ Clone Repository
-git clone https://github.com/Saadnaikwade1/Hospital-Management-System.git
+git clone https://github.com/Saadnaikwade1/MERN/tree/main/HospitalMangement
 cd Hospital-Management-System
 
 Backend Setup
@@ -141,22 +126,29 @@ npm run dev
 
 Runs on → http://localhost:3000
 
-🔮 Future Enhancements
+```
 
-Calendar-based appointment view
 
-Payment & billing module
+### 🔮 Future Enhancements
 
-SMS / Email notifications
+- Calendar-based appointment view
 
-Medical records upload
+- Payment & billing module
 
-Analytics dashboard
+- SMS / Email notifications
 
-💡 Built with ❤️ by Saad A. Naikwade
+- Medical records upload
+ 
+- Analytics dashboard
 
-💼 MERN Stack Developer
+---
 
-📧 naikwadesaad@gmail.com
+##### 💡 Built with ❤️ by Saad A. Naikwade
 
-🌐 GitHub | LinkedIn
+- 💼 MERN Stack Developer
+
+- 📧 naikwadesaad@gmail.com
+
+- 🌐 GitHub | LinkedIn
+
+---
