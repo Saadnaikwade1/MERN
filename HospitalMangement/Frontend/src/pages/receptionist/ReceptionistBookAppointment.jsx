@@ -35,7 +35,8 @@ const ReceptionistBookAppointment = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    setMsg(""); setError("");
+    setMsg("");
+    setError("");
 
     try {
       await api.post("/appointments/book", data);
@@ -48,13 +49,13 @@ const ReceptionistBookAppointment = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <h2 style={styles.heading}>Book Appointment</h2>
-
-      {msg && <p style={styles.success}>{msg}</p>}
-      {error && <p style={styles.error}>{error}</p>}
-
+    <div style={styles.page}>
       <form style={styles.form} onSubmit={submitHandler}>
+        <h2 style={styles.heading}>Book Appointment</h2>
+
+        {msg && <p style={styles.success}>{msg}</p>}
+        {error && <p style={styles.error}>{error}</p>}
+
         {/* Patient */}
         <select
           required
@@ -92,8 +93,8 @@ const ReceptionistBookAppointment = () => {
         {/* Doctor Info */}
         {selectedDoctor && (
           <div style={styles.card}>
-            <p><b>Available:</b> {selectedDoctor.availableDays.join(", ")}</p>
-            <p><b>Fee:</b> ₹{selectedDoctor.consultationFee}</p>
+            <p><b>Available Days:</b> {selectedDoctor.availableDays.join(", ")}</p>
+            <p><b>Consultation Fee:</b> ₹{selectedDoctor.consultationFee}</p>
           </div>
         )}
 
@@ -128,8 +129,9 @@ const ReceptionistBookAppointment = () => {
           ))}
         </select>
 
+        {/* Reason */}
         <textarea
-          placeholder="Reason"
+          placeholder="Reason for visit"
           style={styles.textarea}
           value={data.reason}
           onChange={e => setData({ ...data, reason: e.target.value })}
@@ -142,15 +144,77 @@ const ReceptionistBookAppointment = () => {
 };
 
 const styles = {
-  container:{ padding:30, background:"#f0fdfa", minHeight:"100vh" },
-  heading:{ color:"#0f766e", marginBottom:20 },
-  form:{ maxWidth:420, background:"#fff", padding:24, borderRadius:12 },
-  input:{ padding:12, width:"100%", marginBottom:12 },
-  textarea:{ padding:12, width:"100%", marginBottom:12 },
-  card:{ background:"#ecfeff", padding:10, marginBottom:10 },
-  button:{ background:"#0f766e", color:"#fff", padding:12 },
-  success:{ color:"green" },
-  error:{ color:"red" }
+  page: {
+    minHeight: "85vh",
+    background: "#f0fdfa",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "20px"
+  },
+
+  form: {
+    width: "100%",
+    maxWidth: "420px",
+    background: "#ffffff",
+    padding: "24px",
+    borderRadius: "12px",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
+    display: "flex",
+    flexDirection: "column",
+    gap: "12px"
+  },
+
+  heading: {
+    textAlign: "center",
+    color: "#0f766e",
+    marginBottom: "10px"
+  },
+
+  input: {
+    padding: "12px",
+    borderRadius: "6px",
+    border: "1px solid #ccc",
+    fontSize: "14px"
+  },
+
+  textarea: {
+    padding: "12px",
+    borderRadius: "6px",
+    border: "1px solid #ccc",
+    resize: "none"
+  },
+
+  card: {
+    background: "#ecfeff",
+    border: "1px solid #99f6e4",
+    padding: "10px",
+    borderRadius: "6px",
+    fontSize: "14px"
+  },
+
+  button: {
+    marginTop: "10px",
+    padding: "12px",
+    background: "#0f766e",
+    color: "#fff",
+    border: "none",
+    borderRadius: "6px",
+    fontWeight: "600",
+    cursor: "pointer"
+  },
+
+  success: {
+    color: "green",
+    textAlign: "center",
+    fontSize: "14px"
+  },
+
+  error: {
+    color: "red",
+    textAlign: "center",
+    fontSize: "14px"
+  }
 };
 
 export default ReceptionistBookAppointment;

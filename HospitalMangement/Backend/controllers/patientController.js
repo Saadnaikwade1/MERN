@@ -16,7 +16,7 @@ exports.createPatient = async (req, res) => {
     });
 
     res.status(201).json(patient);
-  } catch (error) {
+  } catch (error) { 
     res.status(500).json({ message: error.message });
   }
 };
@@ -84,7 +84,7 @@ exports.searchPatients = async (req, res) => {
         { name: { $regex: query, $options: "i" } },
         { email: { $regex: query, $options: "i" } }
       ]
-    }).select("name email");
+    }).select("name email phno");
 
     res.json(patients);
   } catch (err) {

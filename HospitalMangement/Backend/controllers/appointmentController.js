@@ -158,3 +158,20 @@ exports.updateStatus = async (req, res) => {
   await Appointment.findByIdAndUpdate(req.params.id, { status });
   res.json({ message: "Status updated" });
 };
+
+
+exports.getAppointmentsByPatient = async (req, res) => {
+  try {
+    const appointments = await Appointment.find({
+      patientId: req.params.id
+    })
+      .populate("doctorId", "name")
+      .sort({ createdAt: -1 });
+
+    res.json(appointments);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+

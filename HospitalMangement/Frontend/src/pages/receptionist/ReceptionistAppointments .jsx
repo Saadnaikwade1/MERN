@@ -141,7 +141,7 @@ const ReceptionistAppointments = () => {
 const styles = {
   container: {
     padding: "28px",
-    minHeight: "100vh",
+    minHeight: "85vh",
     background: "#f8fafc"
   },
 

@@ -7,7 +7,8 @@ const {
   getPatientAppointments,
   getAllAppointments,
   updateStatus,
-  createAppointmentRec
+  createAppointmentRec,
+  getAppointmentsByPatient
 } = require("../controllers/appointmentController");
 
 const { protect } = require("../middleware/authMiddleware");
@@ -26,7 +27,7 @@ router.post("/book", createAppointmentRec);
 
 router.get("/get", getAllAppointments);
 router.put(":id/status", updateStatus);
-
+router.get("/patient/:id",getAppointmentsByPatient)
 
 module.exports = router;
     

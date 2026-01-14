@@ -29,70 +29,157 @@ const ReceptionistPatientSearch = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <h2 style={styles.heading}>Search Patient</h2>
+    <div style={styles.page}>
+      <div style={styles.container}>
+        <h2 style={styles.heading}>Patient Search</h2>
 
-      <input
-        style={styles.input}
-        placeholder="Search by name or email"
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-      />
+        {/* Search Input */}
+        <input
+          style={styles.input}
+          placeholder="Search patient by name or email"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+        />
 
-      {/* Search results */}
-      {patients.map(p => (
-        <div
-          key={p._id}
-          style={styles.result}
-          onClick={() => selectPatient(p)}
-        >
-          {p.name} — {p.email}
-        </div>
-      ))}
-
-      {/* Appointment History */}
-      {selectedPatient && (
-        <div style={styles.card}>
-          <h3>{selectedPatient.name}'s Appointments</h3>
-
-          {appointments.length === 0 ? (
-            <p style={{ color: "green" }}>No previous appointments</p>
-          ) : (
-            appointments.map(a => (
-              <div key={a._id} style={styles.appt}>
-                <b>Doctor:</b> {a.doctorId?.name} <br />
-                <b>Date:</b> {a.date} | {a.time} <br />
-                <b>Status:</b> {a.status}
+        {/* Search Results */}
+        {patients.length > 0 && (
+          <div style={styles.resultsBox}>
+            {patients.map(p => (
+              <div
+                key={p._id}
+                style={{
+                  ...styles.result,
+                  background:
+                    selectedPatient?._id === p._id ? "#ccfbf1" : "#ffffff"
+                }}
+                onClick={() => selectPatient(p)}
+              >
+                <strong>{p.name}</strong>
+                <span style={styles.email}>{p.email}</span>
               </div>
-            ))
-          )}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
+
+        {/* Appointment History */}
+        {selectedPatient && (
+          <div style={styles.historyCard}>
+            <h3 style={styles.subHeading}>
+              {selectedPatient.name}'s Appointment History
+            </h3>
+
+            {appointments.length === 0 ? (
+              <p style={styles.noAppt}>No previous appointments</p>
+            ) : (
+              appointments.map(a => (
+                <div key={a._id} style={styles.apptCard}>
+                  <div><b>Doctor:</b> {a.doctorId?.name}</div>
+                  <div><b>Date:</b> {a.date}</div>
+                  <div><b>Time:</b> {a.time}</div>
+                  <span style={styles.status(a.status)}>
+                    {a.status}
+                  </span>
+                </div>
+              ))
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
 const styles = {
-  container: { padding: 24, background: "#f0fdfa", minHeight: "100vh" },
-  heading: { color: "#0f766e", marginBottom: 16 },
-  input: { padding: 12, width: "100%", marginBottom: 12 },
-  result: {
-    padding: 10,
-    background: "#fff",
-    marginBottom: 6,
-    cursor: "pointer",
-    borderRadius: 6
+  page: {
+    minHeight: "100vh",
+    background: "#f0fdfa",
+    display: "flex",
+    justifyContent: "center",
+    padding: "30px"
   },
-  card: {
-    marginTop: 20,
+
+  container: {
+    width: "100%",
+    maxWidth: "700px"
+  },
+
+  heading: {
+    color: "#0f766e",
+    marginBottom: "16px",
+    textAlign: "center"
+  },
+
+  input: {
+    width: "100%",
+    padding: "14px",
+    borderRadius: "999px",
+    border: "1px solid #d1d5db",
+    marginBottom: "14px",
+    fontSize: "15px"
+  },
+
+  resultsBox: {
     background: "#ffffff",
-    padding: 16,
-    borderRadius: 10
+    borderRadius: "10px",
+    boxShadow: "0 6px 15px rgba(0,0,0,0.08)",
+    overflow: "hidden"
   },
-  appt: {
-    padding: 10,
-    borderBottom: "1px solid #eee"
-  }
+
+  result: {
+    padding: "12px 16px",
+    borderBottom: "1px solid #eee",
+    cursor: "pointer",
+    display: "flex",
+    flexDirection: "column"
+  },
+
+  email: {
+    fontSize: "13px",
+    color: "#6b7280"
+  },
+
+  historyCard: {
+    marginTop: "24px",
+    background: "#ffffff",
+    padding: "20px",
+    borderRadius: "12px",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.08)"
+  },
+
+  subHeading: {
+    marginBottom: "12px",
+    color: "#115e59"
+  },
+
+  noAppt: {
+    color: "green",
+    fontWeight: "500"
+  },
+
+  apptCard: {
+    padding: "12px",
+    borderRadius: "8px",
+    background: "#f9fafb",
+    marginBottom: "10px",
+    position: "relative"
+  },
+
+  status: (s) => ({
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    padding: "4px 10px",
+    borderRadius: "999px",
+    fontSize: "12px",
+    fontWeight: "600",
+    color: "white",
+    background:
+      s === "confirmed"
+        ? "#22c55e"
+        : s === "pending"
+        ? "#f59e0b"
+        : "#ef4444"
+  })
 };
 
 export default ReceptionistPatientSearch;
