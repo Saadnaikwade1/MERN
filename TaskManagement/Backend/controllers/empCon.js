@@ -174,9 +174,11 @@ let updatePassword = async (req, res) => {
 };
 
 let getemp = async (req, res) => {
+  console.log("hi")
   try {
     let data = await emp.find({ dept: req.params.dept }, { name: 1 });
     res.json(data);
+    console.log(data)
   } catch {
     res.json({ msg: "Error in Fetching Employees" });
   }

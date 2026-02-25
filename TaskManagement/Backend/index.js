@@ -13,12 +13,13 @@ app.use(express.json());
 app.use(cors());
 
 // Database connection
-connectDB();   // ✅ FUNCTION CALL
+connectDB();   
 
 // Routes
-app.use("/", rt);
 
+
+app.use("/", rt);
 // Server start
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running `);
 });

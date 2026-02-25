@@ -18,7 +18,7 @@ function Login() {
     setData({ ...data, [name]: value });
   };
   let login = () => {
-    // console.log("BASE API:", Base_API);
+    console.log("BASE API:", Base_API);
     axios.post(`${Base_API}/login`, data).then((res) => {
       if (res.data.token != undefined) {
         obj.stateUpd(res.data);
